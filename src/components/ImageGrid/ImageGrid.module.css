@@ -1,0 +1,28 @@
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+    padding: 1rem;
+}
+
+@media (min-width: 445px) {
+    .imageGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+    .imageGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .imageGrid {
+        width: 1024px;
+        justify-self: center;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

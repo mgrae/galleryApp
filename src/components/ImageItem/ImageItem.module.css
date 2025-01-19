@@ -1,0 +1,97 @@
+.overlay {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    padding-top: 40px;
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    margin: 5px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.imageAlt {
+    composes: text bold;
+}
+
+.line {
+    opacity: 0;
+    width: 90px;
+    height: 1px;
+    background-color: white;
+    transition: opacity 0.3s ease;
+    margin: 5px 0;
+}
+
+.imageContainer:hover .text {
+    opacity: 1;
+}
+
+.imageContainer:hover .line {
+    opacity: 1;
+}
+
+.imageContainer:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.imageContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.button {
+    border-radius: 28px;
+    outline: 1px solid rgba(255, 255, 255, 0.32);
+    padding: 10px 30px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.button:hover {
+    scale: 1.05;
+}
+
+.textButton {
+    composes: text button;
+}
+.image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet styles  */
+@media (min-width: 768px) {
+    .image {
+        width: 100%;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+    .image {
+        width: 380px;
+    }
+}
