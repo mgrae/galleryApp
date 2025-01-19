@@ -28,7 +28,7 @@ This project demonstrates skills in React, TypeScript, API integration, state ma
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/gallery-app.git
+   git clone https://github.com/mgrae/galleryApp.git
    ```
 2. Navigate to the project directory:
    ```bash
