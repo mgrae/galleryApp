@@ -1,14 +1,11 @@
 import * as process from "process";
-
-const API_KEY = process.env.REACT_APP_PEXEL_API_KEY;
-const BASE_URL = process.env.REACT_APP_PEXEL_BASE_URL;
 import {PexelsResponse} from '../types/Image';
 
 export const fetchImages = async (page: number): Promise<PexelsResponse> => {
     try {
-        const response = await fetch(`${BASE_URL}curated?page=${page}`, {
+        const response = await fetch(`${process.env.REACT_APP_PEXEL_BASE_URL}curated?page=${page}`, {
             headers: {
-                Authorization: `${API_KEY}`,
+                Authorization: `${process.env.REACT_APP_PEXEL_API_KEY}`,
             },
         });
 
