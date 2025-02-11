@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import ResponsiveImage from '@components/ResponsiveImage/ResponsiveImage';
 
 import styles from './ImageItem.module.css';
@@ -7,7 +7,7 @@ import {ImageItemProps} from '../../types/Image';
 
 const ImageItem: React.FC<ImageItemProps> = ({ image, isLast, setLastImageRef }) => {
     const { favorites, addFavorite, removeFavorite } = useFavorites();
-    const isFavorite = favorites.some((fav) => fav.id === image.id);
+    const isFavorite = useMemo(() => favorites.some((fav) => fav.id === image.id), [favorites]);
     return (
         <div className={styles.imageContainer} key={image.id} ref={isLast ? setLastImageRef : null}>
             <ResponsiveImage imageSrc={image.src} alt={image.alt} className={styles.image} />
